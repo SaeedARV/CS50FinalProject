@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matrix Calculator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/script.js">
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Matrix Calculator</h1>
+    </header>
+
+    <div class="container">
+        <div class="d-flex justify-content-center text-center">
+            <div class="section">
+                <div class="matrixtitle">
+                    Matrix A:
+                </div>
+
+                <table class="rowcolumn">
+                    <tbody>
+                        <tr>
+                            <td align="center">row</td>
+                            <td>&nbsp;</td>
+                            <td align="center">column</td>
+                        </tr>
+                        <tr>
+
+                            <td><input id="arow" type="number" value="3" min="1" max="10"
+                                    onchange="updateRowColumn('arow')" class="threeChar"></td>
+                            <td>X</td>
+                            <td><input id="acolumn" type="number" value="3" min="1" max="10"
+                                    onchange="updateRowColumn('acolumn')" class="threeChar"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <table id="atable">
+                        <tbody>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button onclick="fillRandom('atable')">Random</button>
+
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center text-center">
+            <div class="section">
+                <div class="matrixtitle">
+                    Matrix B:
+                </div>
+
+                <table class="rowcolumn">
+                    <tbody>
+                        <tr>
+                            <td align="center">row</td>
+                            <td>&nbsp;</td>
+                            <td align="center">column</td>
+                        </tr>
+                        <tr>
+                            <td><input id="brow" type="number" value="3" min="1" max="10"
+                                    onchange="updateRowColumn('brow')" class="threeChar"></td>
+                            <td>X</td>
+                            <td><input id="bcolumn" type="number" value="3" min="1" max="10"
+                                    onchange="updateRowColumn('bcolumn')" class="threeChar"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <table id="btable">
+                        <tbody>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="fourChar"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button onclick="fillRandom('btable')">Random</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
