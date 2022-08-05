@@ -38,10 +38,10 @@
                         <tr>
 
                             <td><input id="arow" type="number" value="3" min="1" max="10"
-                                    onchange="updateRowColumn('arow')" class="threeChar"></td>
+                                    onchange="updateRowColumn('arow')" class="smalCell"></td>
                             <td>X</td>
                             <td><input id="acolumn" type="number" value="3" min="1" max="10"
-                                    onchange="updateRowColumn('acolumn')" class="threeChar"></td>
+                                    onchange="updateRowColumn('acolumn')" class="smalCell"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -50,31 +50,33 @@
                     <table id="atable">
                         <tbody>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 0, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 0, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 0, 2)"></td>
                             </tr>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 1, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 1, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 1, 2)"></td>
                             </tr>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 2, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 2, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('atable', 2, 2)"></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <button class="bIn"onclick="clearTable('atable')">All 0</button>
-                <button class="bIn"onclick="fillRandom('atable')">Random</button>
+                <button class="bIn" onclick="clearTable('atable')">All 0</button>
+                <button class="bIn" onclick="fillRandom('atable')">Random</button>
 
             </div>
         </div>
+
         <div class="d-flex justify-content-center text-center">
-        <button class="bOut" onclick="multiplication()">A * B</button>
+            <button class="bOut" onclick="addition()">A + B</button>
+            <button class="bOut" onclick="multiplication()">A * B</button>
         </div>
 
         <div class="d-flex justify-content-center text-center">
@@ -92,10 +94,10 @@
                         </tr>
                         <tr>
                             <td><input id="brow" type="number" value="3" min="1" max="10"
-                                    onchange="updateRowColumn('brow')" class="threeChar"></td>
+                                    onchange="updateRowColumn('brow')" class="smalCell"></td>
                             <td>X</td>
                             <td><input id="bcolumn" type="number" value="3" min="1" max="10"
-                                    onchange="updateRowColumn('bcolumn')" class="threeChar"></td>
+                                    onchange="updateRowColumn('bcolumn')" class="smalCell"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -104,26 +106,26 @@
                     <table id="btable">
                         <tbody>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 0, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 0, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 0, 2)"></td>
                             </tr>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 1, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 1, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 1, 2)"></td>
                             </tr>
                             <tr>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
-                                <td><input type="text" value="0" class="fourChar"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 2, 0)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 2, 1)"></td>
+                                <td><input type="text" value="0" class="largeCell" onblur="updateCells('btable', 2, 2)"></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <button class="bIn" onclick="clearTable('btable')">All 0</button>
-                <button class="bIn"onclick="fillRandom('btable')">Random</button>
+                <button class="bIn" onclick="fillRandom('btable')">Random</button>
 
             </div>
         </div>
@@ -132,8 +134,9 @@
             <div class="section">
                 <div class="matrixtitle">
                     Result:
-                </div> 
+                </div>
 
+                <div id="op"></div>
                 <table id="rtable"></table>
                 <p id="invalidOp"></p>
             </div>
