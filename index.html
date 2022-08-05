@@ -68,9 +68,13 @@
                     </table>
                 </div>
 
-                <button onclick="fillRandom('atable')">Random</button>
+                <button class="bIn"onclick="clearTable('atable')">All 0</button>
+                <button class="bIn"onclick="fillRandom('atable')">Random</button>
 
             </div>
+        </div>
+        <div class="d-flex justify-content-center text-center">
+        <button class="bOut" onclick="multiplication()">A * B</button>
         </div>
 
         <div class="d-flex justify-content-center text-center">
@@ -118,10 +122,25 @@
                     </table>
                 </div>
 
-                <button onclick="fillRandom('btable')">Random</button>
+                <button class="bIn" onclick="clearTable('btable')">All 0</button>
+                <button class="bIn"onclick="fillRandom('btable')">Random</button>
 
             </div>
         </div>
+
+        <div id="resultsection" class="d-flex justify-content-center text-center">
+            <div class="section">
+                <div class="matrixtitle">
+                    Result:
+                </div> 
+
+                <table id="rtable"></table>
+                <p id="invalidOp"></p>
+            </div>
+
+        </div>
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

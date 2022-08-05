@@ -62,14 +62,29 @@ table {
 	margin-bottom: 5px;
 }
 
-button {
+.bIn {
 	color: #fff;
 	background-color: #06283D;
 	border-radius: 5px;
 }
 
-button:hover {
+.bOut {
+	color: #06283D;
+	background-color: #DFF6FF;
+	border-radius: 5px;
+}
+
+.bIn:hover {
 	background-color: #06283dc8;
+}
+
+.bOut:hover {
+	background-color: #dff6ff9a;
+}
+
+#invalidOp {
+	color: #ff0000;
+	font-weight: bold;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
