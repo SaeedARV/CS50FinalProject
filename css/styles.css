@@ -5,13 +5,13 @@
 
 body {
 	font-size: 16px;
-	color: #06283D;
-	background-color: #06283D;
+	color: #1A374D;
+	background-color: #406882;
 }
 
 
 header {
-	background-color: #47B5FF;
+	background-color: #B1D0E0;
 	border-radius: 0;
 	border: 0;
 	padding: 0;
@@ -19,26 +19,29 @@ header {
 }
 
 header h1 {
-	color: #06283D;
+	color: #1A374D;
 	text-transform: uppercase;
-	font-size: 35px;
+	font-size: 45px;
 	font-weight: bold;
-	text-shadow: 1px 1px 1px #222;
+	text-shadow: 2px 2px 2px #222;
 	text-align: center;
 	padding: 10px;
 }
 
 .section {
-	background-color: #DFF6FF;
+	background-color: #B1D0E0;
+	min-width: 140px;
 	width: fit-content;
 	padding: 5px;
 	border: 1px solid black;
+	box-shadow: 5px 5px 5px #222;
 	margin: 10px;
 }
 
+
 .matrixtitle {
 	color: #fff;
-	background-color: #06283D;
+	background-color: #1A374D;
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
@@ -64,27 +67,35 @@ table {
 
 .bIn {
 	color: #fff;
-	background-color: #06283D;
+	background-color: #1A374D;
 	border-radius: 5px;
 }
 
 .bOut {
-	color: #06283D;
-	background-color: #DFF6FF;
+	color: #1A374D;
+	background-color: #B1D0E0;
 	border-radius: 5px;
+	width: 100px;
+	margin: 15px 10px 15px 10px;
+	box-shadow: 2px 2px 2px #222;
 }
 
 .bIn:hover {
-	background-color: #06283dc8;
+	background-color: #1a374dc5;
 }
 
 .bOut:hover {
-	background-color: #dff6ff9a;
+	background-color: #b1d0e08b;
 }
 
 #invalidOp {
 	color: #ff0000;
 	font-weight: bold;
+}
+
+hr {
+	height: 2px;
+	background-color: #000;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -109,6 +120,9 @@ table {
 		text-align: right;
 		width: 43px;
 	}
+	header h1 {
+		font-size: 35px;
+	}
 }
 
 @media (max-width: 479.99px) {
@@ -122,6 +136,6 @@ table {
 		width: 30px;
 	}
 	header h1 {
-		font-size: 25px;
+		font-size: 35px;
 	}
 }

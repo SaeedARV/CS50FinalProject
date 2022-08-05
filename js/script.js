@@ -144,3 +144,20 @@ function addition() {
     }
     makeTable('rtable', arow, bcolumn);
 }
+
+function subtraction() {
+    if (arow != brow || acolumn != bcolumn) {
+        invalidOp(1);
+        return;
+    }
+
+    document.getElementById('invalidOp').innerHTML = "";
+    document.getElementById('op').innerHTML = "A - B =";
+
+    for (var i = 0; i < arow; i++) {
+        for (var j = 0; j < acolumn; j++) {
+            result[i][j] = A[i][j] - B[i][j];
+        }
+    }
+    makeTable('rtable', arow, bcolumn);
+}
