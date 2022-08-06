@@ -73,6 +73,7 @@ table {
 
 .table {
 	overflow-x: auto;
+	margin-bottom: 5px;
 }
 
 .bIn {
@@ -146,6 +147,9 @@ footer a:hover {
 	.bOut {
 		margin: 15px 3px 15px 3px;
 	}
+	footer span {
+		font-size: 13px;
+	}
 }
 
 @media (max-width: 289.99px) {
@@ -155,5 +159,8 @@ footer a:hover {
 	}
 	.bOut {
 		margin: 15px 1px 15px 1px;
+	}
+	footer span {
+		font-size: 13px;
 	}
 }
