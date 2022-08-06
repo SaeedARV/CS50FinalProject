@@ -46,7 +46,7 @@
                     </tbody>
                 </table>
 
-                <div>
+                <div class="table">
                     <table id="atable">
                         <tbody>
                             <tr>
@@ -70,6 +70,7 @@
 
                 <button class="bIn" onclick="clearTable('atable')">All 0</button>
                 <button class="bIn" onclick="fillRandom('atable')">Random</button>
+                <br>
                 <button class="bIn" onclick="showDeterminant('atable')">Determinant</button>
                 <button class="bIn" onclick="showInverse('atable')">Inverse</button>
 
@@ -106,7 +107,7 @@
                     </tbody>
                 </table>
 
-                <div>
+                <div class="table">
                     <table id="btable">
                         <tbody>
                             <tr>
@@ -130,6 +131,7 @@
 
                 <button class="bIn" onclick="clearTable('btable')">All 0</button>
                 <button class="bIn" onclick="fillRandom('btable')">Random</button>
+                <br>
                 <button class="bIn" onclick="showDeterminant('btable')">Determinant</button>
                 <button class="bIn" onclick="showInverse('btable')">Inverse</button>
 
@@ -145,7 +147,9 @@
                 </div>
 
                 <div id="op"></div>
-                <table id="rtable"></table>
+                <div class="table">
+                    <table id="rtable"></table>
+                </div>
                 <p id="invalidOp"></p>
             </div>
 
