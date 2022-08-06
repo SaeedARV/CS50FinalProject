@@ -94,30 +94,33 @@ table {
 }
 
 hr {
-	height: 2px;
-	background-color: #000;
+	opacity: 1;
+}
+
+#op {
+	font-size: 20px;
+}
+
+#opNumber {
+	font-size: 35px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 	.smalCell {
-		text-align: right;
 		width: 46px;
 	}
 	
 	.largeCell {
-		text-align: right;
 		width: 58px;
 	}
 }
 
 @media (min-width: 480px) and (max-width: 767.99px) {
 	.smalCell {
-		text-align: right;
 		width: 34px;
 	}
 	
 	.largeCell {
-		text-align: right;
 		width: 43px;
 	}
 	header h1 {
@@ -125,17 +128,34 @@ hr {
 	}
 }
 
-@media (max-width: 479.99px) {
+@media (min-width: 290px) and (max-width: 479.99px) {
 	.smalCell {
-		text-align: right;
 		width: 25px;
 	}
 	
 	.largeCell {
-		text-align: right;
 		width: 30px;
 	}
 	header h1 {
 		font-size: 35px;
+	}
+	.bOut {
+		margin: 15px 3px 15px 3px;
+	}
+}
+
+@media (max-width: 289.99px) {
+	.smalCell {
+		width: 25px;
+	}
+	
+	.largeCell {
+		width: 20px;
+	}
+	header h1 {
+		font-size: 35px;
+	}
+	.bOut {
+		margin: 15px 1px 15px 1px;
 	}
 }

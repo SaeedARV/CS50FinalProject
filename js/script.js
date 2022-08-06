@@ -1,13 +1,15 @@
 var arow = 3, brow = 3, acolumn = 3, bcolumn = 3;
-var A = new Array(10), B = new Array(10), result = new Array(10);
+var A = new Array(10), B = new Array(10), result = new Array(10), inverseC = new Array(10);
 for (var i = 0; i < 10; i++) {
     A[i] = new Array(10);
     B[i] = new Array(10);
     result[i] = new Array(10);
+    inverseC[i] = new Array(10);
     for (var j = 0; j < 10; j++) {
         A[i][j] = 0;
         B[i][j] = 0;
         result[i][j] = 0;
+        inverseC[i][j] = 0;
     }
 }
 
@@ -30,6 +32,7 @@ function makeTable(str, row, column) {
     }
 }
 
+// update the number of rows and columns
 function updateRowColumn(str) {
     if (str === "arow") {
         arow = document.getElementById('arow').value;
@@ -49,8 +52,9 @@ function updateRowColumn(str) {
     }
 }
 
+// update the number in cells
 function updateCells(str, i, j) {
-    if(str === "atable"){
+    if (str === "atable") {
         A[i][j] = eval(document.getElementById('atable').rows[i].cells[j].children[0].value);
     }
     else {
@@ -77,6 +81,7 @@ function fillRandom(str) {
     }
 }
 
+// fill cells with 0
 function clearTable(str) {
     if (str === "atable") {
         for (var i = 0; i < 10; i++) {
@@ -96,6 +101,7 @@ function clearTable(str) {
     }
 }
 
+// prvar errors
 function invalidOp(code) {
     document.getElementById('rtable').innerHTML = "";
     document.getElementById('op').innerHTML = "";
@@ -105,8 +111,18 @@ function invalidOp(code) {
     else if (code == 1) {
         document.getElementById('invalidOp').innerText = "Size of matrix A must be equal to the size of matrix B."
     }
+    else if (code == 2) {
+        document.getElementById('invalidOp').innerText = "B must be a Square matrix, and the number of columns in the matrix A must be equal to the number of rows in the matrix B."
+    }
+    else if (code == 3) {
+        document.getElementById('invalidOp').innerText = "Determinant of matrix B must not be 0."
+    }
+    else if (code == 4) {
+        document.getElementById('invalidOp').innerText = "The matrix must be Square."
+    }
 }
 
+// result = A * B
 function multiplication() {
 
     if (acolumn != brow) {
@@ -128,6 +144,7 @@ function multiplication() {
     makeTable('rtable', arow, bcolumn);
 }
 
+// result = A + B
 function addition() {
     if (arow != brow || acolumn != bcolumn) {
         invalidOp(1);
@@ -145,6 +162,7 @@ function addition() {
     makeTable('rtable', arow, bcolumn);
 }
 
+// result = A - B
 function subtraction() {
     if (arow != brow || acolumn != bcolumn) {
         invalidOp(1);
@@ -160,4 +178,149 @@ function subtraction() {
         }
     }
     makeTable('rtable', arow, bcolumn);
+}
+
+// temp = cofactor C
+function cofactor(C, temp, p, q, n) {
+
+    var k = 0, t = 0;
+
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < n; j++) {
+            if (i != p && j != q) {
+                temp[k][t++] = C[i][j];
+
+                if (t == n - 1) t = 0, k++;
+            }
+        }
+    }
+}
+
+// return determinant of C
+function determinant(C, n) {
+    var det = 0;
+    if (n == 0) return 1;
+    else if (n == 1) return C[0][0];
+
+    var temp = new Array(10);
+    for (var i = 0; i < 10; i++) {
+        temp[i] = new Array(10);
+    }
+
+    var sign = 1;
+
+    for (var j = 0; j < n; j++) {
+        cofactor(C, temp, 0, j, n);
+        det += sign * C[0][j] * determinant(temp, n - 1);
+
+        sign = -sign;
+    }
+
+    return det;
+}
+
+// adjC = adjoint of C
+function adjoint(adjC) {
+
+    var sign = 1;
+    var temp = new Array(10);
+    for (var i = 0; i < 10; i++) {
+        temp[i] = new Array(10);
+    }
+
+    for (var i = 0; i < brow; i++) {
+        for (var j = 0; j < bcolumn; j++) {
+            cofactor(B, temp, i, j, brow);
+
+            if ((i + j) % 2 == 0) sign = 1;
+            else sign = -1;
+
+            adjC[j][i] = (sign) * (determinant(temp, brow - 1));
+        }
+    }
+}
+
+function inverse(det) {
+
+    var adjC = new Array(10);
+    for (var i = 0; i < 10; i++) {
+        adjC[i] = new Array(10);
+    }
+    adjoint(adjC);
+
+    for (var i = 0; i < brow; i++) {
+        for (var j = 0; j < bcolumn; j++) {
+            inverseC[i][j] = adjC[i][j] / det;
+        }
+    }
+}
+
+//result <- A / B
+function division() {
+
+    if (brow != bcolumn || acolumn != brow) {
+        invalidOp(2);
+        return;
+    }
+
+    document.getElementById('invalidOp').innerHTML = "";
+    document.getElementById('op').innerHTML = "A / B =";
+
+
+    det = determinant(B, brow);
+    if (det === 0) {
+        invalidOp(3);
+        return;
+    }
+
+    inverse(det);
+
+    for (var i = 0; i < arow; i++) {
+        for (var j = 0; j < brow; j++) {
+            result[i][j] = 0;
+            for (var t = 0; t < bcolumn; t++) {
+                result[i][j] += (A[i][t]) * (inverseC[t][j]);
+            }
+            result[i][j] = result[i][j].toFixed(3);
+        }
+    }
+    makeTable('rtable', arow, brow);
+
+    //sefr kardan baraye estefade haye baadi
+    for (var i = 0; i < brow; i++) {
+        for (var j = 0; j < bcolumn; j++) {
+            inverseC[i][j] = 0;
+        }
+    }
+}
+
+function showDeterminant(str) {
+    if (str === 'atable') {
+        if (arow != acolumn) {
+            invalidOp(4);
+            return;
+        }
+
+        document.getElementById('rtable').innerHTML = "";
+        document.getElementById('op').innerHTML = "";
+        document.getElementById('invalidOp').innerHTML = "";
+
+        det = determinant(A, arow);
+        document.getElementById('op').innerHTML = "Determinant of matrix A = <div id='opNumber'>" + det + "</div>";
+
+    }
+    else {
+        if (brow != bcolumn) {
+            invalidOp(4);
+            return;
+        }
+
+        document.getElementById('rtable').innerHTML = "";
+        document.getElementById('op').innerHTML = "";
+        document.getElementById('invalidOp').innerHTML = "";
+        
+        det = determinant(B, brow);
+        document.getElementById('op').innerHTML = "Determinant of matrix B = <div id='opNumber'>" + det + "</div>";
+
+    }
 }
