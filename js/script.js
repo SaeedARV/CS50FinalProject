@@ -115,7 +115,7 @@ function invalidOp(code) {
         document.getElementById('invalidOp').innerText = "B must be a Square matrix, and the number of columns in the matrix A must be equal to the number of rows in the matrix B."
     }
     else if (code == 3) {
-        document.getElementById('invalidOp').innerText = "Determinant of matrix B must not be 0."
+        document.getElementById('invalidOp').innerText = "Determinant of the matrix must not be 0."
     }
     else if (code == 4) {
         document.getElementById('invalidOp').innerText = "The matrix must be Square."
@@ -212,15 +212,13 @@ function determinant(C, n) {
     for (var j = 0; j < n; j++) {
         cofactor(C, temp, 0, j, n);
         det += sign * C[0][j] * determinant(temp, n - 1);
-
         sign = -sign;
     }
-
     return det;
 }
 
 // adjC = adjoint of C
-function adjoint(adjC) {
+function adjoint(adjC, C, p, q) {
 
     var sign = 1;
     var temp = new Array(10);
@@ -228,28 +226,29 @@ function adjoint(adjC) {
         temp[i] = new Array(10);
     }
 
-    for (var i = 0; i < brow; i++) {
-        for (var j = 0; j < bcolumn; j++) {
-            cofactor(B, temp, i, j, brow);
-
+    for (var i = 0; i < p; i++) {
+        for (var j = 0; j < q; j++) {
+            cofactor(C, temp, i, j, p);
             if ((i + j) % 2 == 0) sign = 1;
             else sign = -1;
 
-            adjC[j][i] = (sign) * (determinant(temp, brow - 1));
+            adjC[j][i] = (sign) * (determinant(temp, p - 1));
+            
         }
     }
 }
 
-function inverse(det) {
+// inverseC = inverse of C
+function inverse(det, C, p, q) {
 
     var adjC = new Array(10);
     for (var i = 0; i < 10; i++) {
         adjC[i] = new Array(10);
     }
-    adjoint(adjC);
+    adjoint(adjC, C, p, q);
 
-    for (var i = 0; i < brow; i++) {
-        for (var j = 0; j < bcolumn; j++) {
+    for (var i = 0; i < p; i++) {
+        for (var j = 0; j < q; j++) {
             inverseC[i][j] = adjC[i][j] / det;
         }
     }
@@ -273,7 +272,7 @@ function division() {
         return;
     }
 
-    inverse(det);
+    inverse(det, B, brow, bcolumn);
 
     for (var i = 0; i < arow; i++) {
         for (var j = 0; j < brow; j++) {
@@ -322,5 +321,60 @@ function showDeterminant(str) {
         det = determinant(B, brow);
         document.getElementById('op').innerHTML = "Determinant of matrix B = <div id='opNumber'>" + det + "</div>";
 
+    }
+}
+
+function showInverse(str) {
+    if (str === 'atable') {
+        if (arow != acolumn) {
+            invalidOp(4);
+            return;
+        }
+
+        document.getElementById('rtable').innerHTML = "";
+        document.getElementById('op').innerHTML = "";
+        document.getElementById('invalidOp').innerHTML = "";
+
+        det = determinant(A, arow);
+        if (det === 0) {
+            invalidOp(3);
+            return;
+        }
+    
+        inverse(det, A, arow, acolumn);
+        for (var i = 0; i < arow; i++) {
+            for (var j = 0; j < acolumn; j++) {
+                result[i][j] = inverseC[i][j].toFixed(3);
+            }
+        }
+
+        document.getElementById('op').innerHTML = "Inverse of matrix A =";
+        makeTable('rtable', arow, acolumn);
+    }
+    else {
+        if (brow != bcolumn) {
+            invalidOp(4);
+            return;
+        }
+
+        document.getElementById('rtable').innerHTML = "";
+        document.getElementById('op').innerHTML = "";
+        document.getElementById('invalidOp').innerHTML = "";
+
+        det = determinant(B, brow);
+        if (det === 0) {
+            invalidOp(3);
+            return;
+        }
+    
+        inverse(det, B, brow, bcolumn);
+        for (var i = 0; i < brow; i++) {
+            for (var j = 0; j < bcolumn; j++) {
+                result[i][j] = inverseC[i][j];
+            }
+        }
+
+        document.getElementById('op').innerHTML = "Inverse of matrix B =";
+        makeTable('rtable', brow, bcolumn);
     }
 }
