@@ -370,7 +370,7 @@ function showInverse(str) {
         inverse(det, B, brow, bcolumn);
         for (var i = 0; i < brow; i++) {
             for (var j = 0; j < bcolumn; j++) {
-                result[i][j] = inverseC[i][j];
+                result[i][j] = inverseC[i][j].toFixed(3);
             }
         }
 
