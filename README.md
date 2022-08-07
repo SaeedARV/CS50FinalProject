@@ -15,7 +15,7 @@ I used the analytic solution to calculate the inverse of matrices. Some of the f
 
 The cofactor function takes a matrix C and saves its cofactor in temp.
 The determinant function uses the temp matrix in the cofactor function and calculates the determinant.
-The adjoint function uses both of the above functions to save the adjoint of matrix C in adjC.
+The adjoint function uses both of the these functions to save the adjoint of matrix C in adjC.
 Finally, the inverse function uses the adjoint function to save the inverse of the matrix C in inverseC.
 
 Now the division function can multiply the first matrix by the inverse of the second matrix.
