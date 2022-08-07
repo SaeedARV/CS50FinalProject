@@ -1,6 +1,6 @@
 # Matrix Calculator
 
-This is the final project of [CS50’s Introduction to Computer Science](https://cs50.harvard.edu/x) course.  
+This is the final project of [CS50’s Introduction to Computer Science](https://cs50.harvard.edu/x) course.
 
 ### Overview:
 My final project is a simple matrix calculator that allows the user to enter a matrix and see its determinant and inverse. The user can also enter a second matrix and see two matrices addition, subtraction, multiplication, and division.
@@ -94,7 +94,6 @@ function inverse(det, C, p, q) {
 }
 ```
 
-### Video Demo:  <https://youtu.be/OP9Htup1KKw>
+### To watch the video demo, [click here](https://youtu.be/OP9Htup1KKw).
 
 ### If you want to see the website, [click here](https://saeedarv.github.io/CS50xFinalProject/).
-
