@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+	font-size: 16px;
+	color: #1A374D;
+	background-color: #406882;
+}
+
+
+header {
+	background-color: #B1D0E0;
+	border-radius: 0;
+	margin-bottom: 30px;
+	box-shadow: 0 0 15px 0 #222;
+}
+
+header h1 {
+	color: #1A374D;
+	text-transform: uppercase;
+	font-size: 45px;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px #222;
+	text-align: center;
+	padding: 10px;
+}
+
+.section {
+	background-color: #B1D0E0;
+	min-width: 140px;
+	width: fit-content;
+	padding: 5px;
+	border: 1px solid black;
+	box-shadow: 5px 5px 5px #222;
+	margin: 10px;
+}
+
+
+.matrixtitle {
+	color: #fff;
+	background-color: #1A374D;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.smalCell {
+	text-align: right;
+    width: 46px;
+	border: 1px solid #1A374D;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #666;
+}
+
+.largeCell {
+	text-align: right;
+    width: 58px;
+	border: 1px solid #1A374D;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #666;
+}
+
+.rowcolumn {
+	margin-bottom: 5px;
+}
+
+table {
+	margin-bottom: 5px;
+	border-collapse:unset;
+}
+
+.table {
+	overflow-x: auto;
+	margin-bottom: 5px;
+}
+
+.bIn {
+	color: #fff;
+	background-color: #1A374D;
+	margin-bottom: 5px;
+	box-shadow: 1px 1px 1px #222;
+}
+
+.bOut {
+	color: #1A374D;
+	background-color: #B1D0E0;
+	border-radius: 5px;
+	width: 100px;
+	margin: 15px 10px 15px 10px;
+	box-shadow: 2px 2px 2px #222;
+}
+
+.bIn:hover {
+	background-color: #1a374dc5;
+}
+
+.bOut:hover {
+	background-color: #b1d0e08b;
+}
+
+#invalidOp {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+hr {
+	opacity: 1;
+}
+
+#op {
+	font-size: 20px;
+}
+
+#opNumber {
+	font-size: 35px;
+}
+
+footer {
+	background-color: #6998AB;
+	border-radius: 0;
+	margin-top: 50px;
+	text-align: center;
+	padding: 10px;
+}
+
+footer span {
+	margin-right: 2px;
+}
+
+footer a:hover {
+	color: #1a374dc5;
+}
+
+@media (min-width: 480px) and (max-width: 767.99px) {
+	header h1 {
+		font-size: 35px;
+	}
+}
+
+@media (min-width: 290px) and (max-width: 479.99px) {
+
+	header h1 {
+		font-size: 35px;
+	}
+	.bOut {
+		margin: 15px 3px 15px 3px;
+	}
+	footer span {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 289.99px) {
+
+	header h1 {
+		font-size: 35px;
+	}
+	.bOut {
+		margin: 15px 1px 15px 1px;
+	}
+	footer span {
+		font-size: 13px;
+	}
+}
