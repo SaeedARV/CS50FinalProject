@@ -62,6 +62,7 @@ function updateCells(str, i, j) {
     }
 }
 
+// fill cells with random numbers
 function fillRandom(str) {
     if (str === "atable") {
         for (var i = 0; i < 10; i++) {
@@ -101,7 +102,7 @@ function clearTable(str) {
     }
 }
 
-// prvar errors
+// show errors
 function invalidOp(code) {
     document.getElementById('rtable').innerHTML = "";
     document.getElementById('op').innerHTML = "";
@@ -127,7 +128,6 @@ function invalidOp(code) {
 
 // result = A × B
 function multiplication() {
-
     if (acolumn != brow) {
         invalidOp(0);
         return;
@@ -185,7 +185,6 @@ function subtraction() {
 
 // temp = cofactor C
 function cofactor(C, temp, p, q, n) {
-
     var k = 0, t = 0;
 
     for (var i = 0; i < n; i++) {
@@ -222,7 +221,6 @@ function determinant(C, n) {
 
 // adjC = adjoint of C
 function adjoint(adjC, C, p, q) {
-
     var sign = 1;
     var temp = new Array(10);
     for (var i = 0; i < 10; i++) {
@@ -243,7 +241,6 @@ function adjoint(adjC, C, p, q) {
 
 // inverseC = inverse of C
 function inverse(det, C, p, q) {
-
     var adjC = new Array(10);
     for (var i = 0; i < 10; i++) {
         adjC[i] = new Array(10);
@@ -259,7 +256,6 @@ function inverse(det, C, p, q) {
 
 //result <- A / B
 function division() {
-
     if (brow != bcolumn || acolumn != brow) {
         invalidOp(2);
         return;
