@@ -94,4 +94,4 @@ function inverse(det, C, p, q) {
 }
 ```
 
-### You can watch the [video demo](https://youtu.be/OP9Htup1KKw), or visit the [website](https://saeedarv.github.io/CS50xFinalProject/).
+### You can watch the [video demo](https://youtu.be/OP9Htup1KKw), or visit the [website](https://saeedarv.github.io/CS50x/).
