@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let incorrects = document.querySelectorAll('.incorrect');
+            let correct = document.querySelector('.correct');
+
+            for (let i = 0; i < incorrects.length; i++) {
+                incorrects[i].addEventListener('click', function () {
+                    incorrects[i].style.backgroundColor = 'red';
+                    document.querySelector('#text').innerHTML = 'Incorrect!';
+                    for (let j = 0; j < incorrects.length; j++) {
+                        if (j != i) {
+                            incorrects[j].style.backgroundColor = '#d9edff';
+                        }
+                    }
+                    correct.style.backgroundColor = '#d9edff';
+                });
+            }
+
+            correct.addEventListener('click', function () {
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#text').innerHTML = 'Correct!';
+                for (let j = 0; j < incorrects.length; j++) {
+                    incorrects[j].style.backgroundColor = '#d9edff';
+                }
+            });
+
+
+            let button = document.querySelector('#button');
+            button.addEventListener('click', function(){
+                let input = document.querySelector('#input');
+                if(input.value == 'Q' || input.value == 'q'){
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('#text2').innerHTML = 'Correct!';
+                }
+                else{
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#text2').innerHTML = 'Incorrect!';
+                }
+            });
+        });
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+
+            <h3>Who wrote "of mice and men"?</h3>
+            <button class="incorrect">Harper Lee</button>
+            <button class="incorrect">F. Scott Fitzgerald</button>
+            <button class="incorrect">Ken Kesey</button>
+            <button class="correct">John Steinbeck</button>
+            <button class="incorrect">Ernest Hemingway</button>
+            <button class="incorrect">Mark Twain</button>
+
+            <p id="text"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+
+            <h3>What is the only letter that doesn't appear in any U.S. state name?</h3>
+            <input type="text" id="input">
+            <button id="button">Check</button>
+
+            <p id="text2"></p>
+        </div>
+    </div>
+</body>
+
+</html>

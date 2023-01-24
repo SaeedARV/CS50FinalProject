@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: On the same sorted test case, sort1 was much faster than sort3. Bubble sort's best complexity is n, while Selection sort's best complexity is n^2.
+
+sort2 uses: Merge sort
+
+How do you know?: On the same random test case, sort2 was much faster than sort1 and sort3.
+
+sort3 uses: Selection sort
+
+How do you know?: On the same sorted test case, sort3 was much slower than sort1. Bubble sort's best complexity is n, while Selection sort's best complexity is n^2.

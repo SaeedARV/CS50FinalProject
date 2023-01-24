@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Movies</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let incorrects = document.querySelectorAll('.incorrect');
+                let corrects = document.querySelectorAll('.correct');
+
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function () {
+                        incorrects[i].style.backgroundColor = 'red';
+                    });
+                }
+                for (let i = 0; i < corrects.length; i++) {
+                    corrects[i].addEventListener('click', function () {
+                        corrects[i].style.backgroundColor = 'green';
+                    });
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <a href="index.html" class="mainPage">Main Page</a>
+            <h4>In which subject do you want to know more about me?</h4>
+            <div>
+                <a href="programmingLanguages.html" type="button" class="btn btn-warning">Programming Languages</a>
+                <a href="books.html" type="button" class="btn btn-warning">Books</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h5>Which of these movies have I seen?</h5>
+                <button type="button" class="btn btn-outline-warning correct">Schindler's List</button>
+                <button type="button" class="btn btn-outline-warning correct">City of God</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Seven Samurai</button>
+                <button type="button" class="btn btn-outline-warning incorrect">The Green Mile</button>
+                <button type="button" class="btn btn-outline-warning correct">Interstellar</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Gladiator</button>
+                <button type="button" class="btn btn-outline-warning incorrect">American History X</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Casablanca</button>
+                <button type="button" class="btn btn-outline-warning correct">It's a Wonderful Life </button>
+                <button type="button" class="btn btn-outline-warning incorrect">Apocalypse Now</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Paths of Glory</button>
+                <button type="button" class="btn btn-outline-warning correct">Joker</button>
+                <button type="button" class="btn btn-outline-warning correct">Inglourious Basterds</button>
+                <button type="button" class="btn btn-outline-warning correct">12 Angry Men</button>
+                <button type="button" class="btn btn-outline-warning correct">Pulp Fiction</button>
+                <button type="button" class="btn btn-outline-warning correct">Forrest Gump</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Star Wars</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Whiplash</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Back to the Future</button>
+                <button type="button" class="btn btn-outline-warning correct">Modern Times</button>
+            </div>
+        </div>
+    </body>
+</html>

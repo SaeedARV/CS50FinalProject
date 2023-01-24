@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th> Transaction Type </th>
+                <th> Symbol </th>
+                <th> Price </th>
+                <th> Shares </th>
+                <th> Transaction Time </th>
+            </tr>
+            {% for row in transactions %}
+            <tr>
+
+                <th>
+                    {{ "BUY" if row["shares"] > 0 else "SELL" }}
+                </th>
+                <td>  {{ row["stock"] }}  </td>
+                <td>  {{ row["price"] }}  </td>
+                <td>  {{ row["shares"]|abs }}  </td>
+                <td>  {{ row["date"] }}  </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

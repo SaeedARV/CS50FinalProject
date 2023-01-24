@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Books</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let incorrects = document.querySelectorAll('.incorrect');
+                let corrects = document.querySelectorAll('.correct');
+
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function () {
+                        incorrects[i].style.backgroundColor = 'red';
+                    });
+                }
+                for (let i = 0; i < corrects.length; i++) {
+                    corrects[i].addEventListener('click', function () {
+                        corrects[i].style.backgroundColor = 'green';
+                    });
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <a href="index.html" class="mainPage">Main Page</a>
+            <h4>In which subject do you want to know more about me?</h4>
+            <div>
+                <a href="programmingLanguages.html" type="button" class="btn btn-warning">Programming Languages</a>
+                <a href="movies.html" type="button" class="btn btn-warning">Movies</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h5>Which of these books have I read?</h5>
+                <button type="button" class="btn btn-outline-warning incorrect">In Search of Lost Time</button>
+                <button type="button" class="btn btn-outline-warning correct">The Catcher in the Rye</button>
+                <button type="button" class="btn btn-outline-warning incorrect">One Hundred Years of Solitude</button>
+                <button type="button" class="btn btn-outline-warning incorrect">The Odyssey</button>
+                <button type="button" class="btn btn-outline-warning incorrect">The Brothers Karamazov</button>
+                <button type="button" class="btn btn-outline-warning correct">The Stranger</button>
+                <button type="button" class="btn btn-outline-warning incorrect">David Copperfield</button>
+                <button type="button" class="btn btn-outline-warning correct">Notes from Underground</button>
+                <button type="button" class="btn btn-outline-warning correct">Pedro Paramo</button>
+                <button type="button" class="btn btn-outline-warning incorrect">To Kill a Mockingbird</button>
+                <button type="button" class="btn btn-outline-warning correct">The Old Man and the Sea</button>
+                <button type="button" class="btn btn-outline-warning correct">Kafka on the Shore</button>
+                <button type="button" class="btn btn-outline-warning correct">The Wisdom of Life</button>
+                <button type="button" class="btn btn-outline-warning incorrect">The Grapes of Wrath</button>
+                <button type="button" class="btn btn-outline-warning incorrect">Nineteen Eighty Four</button>
+                <button type="button" class="btn btn-outline-warning correct">Pulp</button>
+            </div>
+        </div>
+    </body>
+</html>
